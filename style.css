@@ -8,89 +8,125 @@
 
 /* Background */
 body {
-    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Container */
-.container {
+/* Wrapper */
+.wrapper {
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     padding: 20px;
 }
 
-/* Form Box */
-.form-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+/* Card */
+.card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: slideDown 0.8s ease;
 }
 
-.form-box h2 {
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     color: #333;
 }
 
-/* Input Group */
-.input-group {
-    margin-bottom: 15px;
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
 }
 
-.input-group label {
-    display: block;
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 5px;
+/* Floating Label Input */
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    padding: 12px 10px;
+    border: 1.8px solid #ccc;
+    border-radius: 10px;
     outline: none;
-    transition: 0.2s;
+    font-size: 15px;
+    transition: 0.25s;
 }
 
-.input-group input:focus {
-    border-color: #4e73df;
-    box-shadow: 0 0 5px rgba(78, 115, 223, 0.4);
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    transition: 0.25s;
+    background: #fff;
+    padding: 0 4px;
+}
+
+/* Animasi label naik */
+.input-group input:focus,
+.input-group input:valid {
+    border-color: #6a11cb;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    color: #6a11cb;
 }
 
 /* Button */
 .btn {
     width: 100%;
-    background: #4e73df;
-    border: none;
+    background: #6a11cb;
     padding: 12px;
     color: white;
+    border: none;
+    margin-top: 5px;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #2e59d9;
+    background: #540da3;
 }
 
-/* Login Link */
-.login-link {
+/* Login text */
+.login-text {
     text-align: center;
-    margin-top: 12px;
+    margin-top: 15px;
     font-size: 14px;
 }
 
-.login-link a {
-    color: #4e73df;
+.login-text a {
+    color: #6a11cb;
     text-decoration: none;
 }
 
-.login-link a:hover {
+.login-text a:hover {
     text-decoration: underline;
 }
